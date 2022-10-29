@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <inttypes.h>
 
+/**
+ * Array Operations
+ *
+ * - Calculate item index: O(1)
+ * - Insert or delete item at beginning: O(n)
+ * - Insert or delete item in middle: O(n)
+ * - Insert or delete item at the end: O(1)
+ */
+
 void list_values(int *arr, size_t n)
 {
 	size_t i;
