@@ -39,7 +39,7 @@ std::ostream &operator<<  (std::ostream &o, const MyStack<T> &ms)
 
 int main()
 {
-	// try out the Python stack functions
+	// try out the c++ stack functions
 
 	// TODO: create a new empty stack
 	MyStack<int> stack;
