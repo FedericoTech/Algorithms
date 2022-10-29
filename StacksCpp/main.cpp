@@ -7,16 +7,6 @@
  * 	Usage:
  * 		- expression processing
  * 		- backtracking: browser back stack, for example.
- *
- * Queue
- *
- * - Queue: collection that supports adding and removing.
- * - first item added is the first item out
- *
- * 	Usage:
- *
- * 		- Order processing
- * 		- Messaging
  */
 
 #include <stack>
