@@ -1,11 +1,13 @@
 /**
  * use a recursive algorithm to find a maximum value
+ * O(n)
  */
 
 
 #include <iostream>
 
-int find_max(const int * const items, const size_t &size)
+template<typename T, std::enable_if_t<std::is_arithmetic<T>::value, bool> = true>
+T find_max(const T * const items, const size_t &size)
 {
 	//TODO: breaking condition: last item in list? return it
 	if(size == 1){
@@ -14,12 +16,12 @@ int find_max(const int * const items, const size_t &size)
 
 	//TODO: otherwise get the first item and call function
 	//again to operate on the rest of the list
-	int op1 = items[0];
+	T op1 = items[0];
 
-	int aux[size -1];
+	T aux[size -1];
 	std::copy(&items[1], &items[size], aux);
 
-	int op2 = find_max(aux, size - 1);
+	T op2 = find_max(aux, size - 1);
 
 	//TODO: perform the comparison when we're down to just two
 	return op1 > op2 ? op1 : op2;
