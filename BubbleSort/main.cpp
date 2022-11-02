@@ -15,7 +15,7 @@
 template<typename T>
 void print_array(T * const dataset, const size_t &size)
 {
-	T *iter = dataset, *end = dataset + size;
+	const T *iter = dataset, *end = dataset + size;
 	while(iter != end){
 		std::cout << *iter++ << ' ';
 	}
@@ -30,10 +30,8 @@ void bubbleSort(T * const dataset, const size_t &size)
 	//TODO: start with the array length and decrement each time
 	for(size_t i = 0; i < size; i++){
 		for(size_t j = 0; j < size - i - 1; j++){
-			if(dataset[j] > dataset[j+1]){
-				T temp = dataset[j];
-				dataset[j] = dataset[j + 1];
-				dataset[j+1] = temp;
+			if(dataset[j] > dataset[j + 1]){
+				std::swap(dataset[j], dataset[j + 1]);
 			}
 		}
 
