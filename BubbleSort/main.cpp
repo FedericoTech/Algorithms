@@ -11,12 +11,21 @@
  */
 
 #include <iostream>
-#include <type_traits>
+
+template<typename T>
+void print_array(T * const dataset, const size_t &size)
+{
+	T *iter = dataset, *end = dataset + size;
+	while(iter != end){
+		std::cout << *iter++ << ' ';
+	}
+	std::cout << std::endl;
+}
 
 //Bubble sort algorithm
 
 template<typename T, std::enable_if_t<std::is_arithmetic<T>::value, bool> = true>
-void bubbleSort(T *dataset, const size_t &size)
+void bubbleSort(T * const dataset, const size_t &size)
 {
 	//TODO: start with the array length and decrement each time
 	for(size_t i = 0; i < size; i++){
@@ -28,11 +37,7 @@ void bubbleSort(T *dataset, const size_t &size)
 			}
 		}
 
-		//to see how it performs
-		for(size_t j = 0; j < size; j++){
-			std::cout << dataset[j] << ' ';
-		}
-		std::cout << '\n';
+		print_array(dataset, size);
 	}
 };
 
@@ -47,9 +52,7 @@ int main()
 
 	bubbleSort(list1, num_elements);
 
-	for(auto n: list1){
-		std::cout << n << '\n';
-	}
+	print_array(list1, num_elements);
 
 	return 0;
 }
