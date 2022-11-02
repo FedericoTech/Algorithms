@@ -20,13 +20,14 @@ void print_array(T *dataset, const size_t &size)
 	std::cout << std::endl;
 }
 
-void mergesort(int *dataset, const size_t &size)
+template<typename T, std::enable_if_t<std::is_arithmetic<T>::value, bool> = true>
+void mergesort(T *dataset, const size_t &size)
 {
 	if(size > 1){
 		size_t mid_l = size / 2;
 		size_t mid_r = size - mid_l;
-		int leftarr[mid_l];
-		int rightarr[mid_r];
+		T leftarr[mid_l];
+		T rightarr[mid_r];
 
 		std::copy(dataset, dataset + mid_l, leftarr);
 		std::copy(dataset + mid_l, dataset + size, rightarr);
@@ -69,7 +70,7 @@ void mergesort(int *dataset, const size_t &size)
 
 int main()
 {
-	int items[] = {6, 20, 8, 19, 56, 23, 87, 41, 49, 53, 12};
+	float items[] = {6, 20, 8, 19, 56, 23, 87, 41, 49.7f, 53, 12};
 	int size = sizeof items / sizeof items[0];
 
 	std::cout << "before\n";
