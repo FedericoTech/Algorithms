@@ -11,9 +11,9 @@
 #include<iostream>
 
 template<typename T>
-void print_array(T *dataset, const size_t &size)
+void print_array(T * const dataset, const size_t &size)
 {
-	T *iter = dataset, *end = dataset + size;
+	const T *iter = dataset, *end = dataset + size;
 	while(iter != end){
 		std::cout << *iter++ << ' ';
 	}
@@ -21,7 +21,7 @@ void print_array(T *dataset, const size_t &size)
 }
 
 template<typename T, std::enable_if_t<std::is_arithmetic<T>::value, bool> = true>
-void mergesort(T *dataset, const size_t &size)
+void mergesort(T * const dataset, const size_t &size)
 {
 	if(size > 1){
 		size_t mid_l = size / 2;
@@ -71,7 +71,7 @@ void mergesort(T *dataset, const size_t &size)
 int main()
 {
 	float items[] = {6, 20, 8, 19, 56, 23, 87, 41, 49.7f, 53, 12};
-	int size = sizeof items / sizeof items[0];
+	size_t size = sizeof items / sizeof items[0];
 
 	std::cout << "before\n";
 
