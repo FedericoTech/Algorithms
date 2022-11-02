@@ -2,6 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Linked Lists
+ * - Collection of data elements, called nodes.
+ * - Contain reference to the next node in the list
+ * - Hold whatever data the application needs
+ *
+ * - elements can be easily inserted and removed
+ * - Underlying memory doesn't need to be reorganised.
+ * - Can't do constant-time random item access
+ * - Item lookup is linear in time complexity O(n)
+ */
+
 struct Link {
 	int value;
 	struct Link *next;
