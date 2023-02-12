@@ -1,0 +1,1 @@
+cmake -E chdir build/default cmake --build .
