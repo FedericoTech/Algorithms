@@ -24,8 +24,7 @@ void update_array(int *arr, size_t *n, size_t k, int item)
 {
 	int j = *n;
 
-	while(j-- >= k) //whilst we don't reach the desired index from the top...
-	{
+	while(j-- >= k){ //whilst we don't reach the desired index from the top...
 		arr[j + 1] = arr[j]; //we move the element on position up
 	}
 
